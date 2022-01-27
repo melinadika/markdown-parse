@@ -20,13 +20,24 @@ public class MarkdownParse {
                 continue;
             }
             int nextCloseBracket = markdown.indexOf("]", nextOpenBracket);
-            while (nextCloseBracket > 1 && markdown.charAt(nextCloseBracket - 1) == '\\' && markdown.charAt(nextCloseBracket - 2) != '\\') {
+            while (nextCloseBracket > 1 && markdown.charAt(nextCloseBracket -  
+                1) == '\\' && markdown.charAt(nextCloseBracket - 2) != '\\') {
                 nextCloseBracket = markdown.indexOf("]", nextCloseBracket + 1);
                 if (nextCloseBracket == -1) {
                     break;
                 }
             }
             if (nextCloseBracket == -1) {
+                break;
+            }
+            boolean noChars = true;
+            for(int i = nextOpenBracket+1; i < nextCloseBracket; i++){
+                if(markdown.charAt(i) != ' ') {
+                    noChars = false;
+                    break;
+                }
+            }
+            if(noChars) {
                 break;
             }
             int openParen = markdown.indexOf("(", nextCloseBracket);
