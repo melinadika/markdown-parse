@@ -48,4 +48,8 @@ public class MarkdownParseTest {
         testFile(List.of("firstline.com", "middle.com", "lastline.com"), "lab4-test6.md");
     }
 
+    @Test
+    public void testOnlyBrakets() throws IOException{
+        testFile(List.of(), "lab4-test7.md");
+    }
 }
