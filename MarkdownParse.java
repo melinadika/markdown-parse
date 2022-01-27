@@ -20,7 +20,7 @@ public class MarkdownParse {
                 continue;
             }
             int nextCloseBracket = markdown.indexOf("]", nextOpenBracket);
-            while (markdown.charAt(nextCloseBracket - 1) == '\\' && markdown.charAt(nextCloseBracket - 2) != '\\') {
+            while (nextCloseBracket > 1 && markdown.charAt(nextCloseBracket - 1) == '\\' && markdown.charAt(nextCloseBracket - 2) != '\\') {
                 nextCloseBracket = markdown.indexOf("]", nextCloseBracket + 1);
                 if (nextCloseBracket == -1) {
                     break;

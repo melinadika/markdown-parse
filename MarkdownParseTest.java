@@ -52,4 +52,37 @@ public class MarkdownParseTest {
     public void testOnlyBrakets() throws IOException{
         testFile(List.of(), "lab4-test7.md");
     }
+
+    @Test
+    public void testFile1() throws IOException {
+        testFile(List.of("https://something.com", "some-page.html"), "test-file.md");
+    }
+    @Test
+    public void testFile2() throws IOException {
+        testFile(List.of("https://something.com", "some-page.html"), "test-file2.md");
+    }
+        @Test
+    public void testFile3() throws IOException {
+        testFile(List.of(), "test-file3.md");
+    }
+    @Test
+    public void testFile4() throws IOException {
+        testFile(List.of(), "test-file4.md");
+    }
+    @Test
+    public void testFile5() throws IOException {
+        testFile(List.of(), "test-file5.md");
+    }
+    @Test
+    public void testFile6() throws IOException {
+        testFile(List.of(), "test-file6.md");
+    }
+    @Test
+    public void testFile7() throws IOException {
+        testFile(List.of(), "test-file7.md");
+    }
+    @Test
+    public void testFile8() throws IOException {
+        testFile(List.of(), "test-file8.md");
+    }
 }
